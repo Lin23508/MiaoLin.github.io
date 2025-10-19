@@ -10,26 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#ffffff; --card:#ffffff; --muted:#6b7280; --brand:#2563eb; --accent:#14b8a6;
+      --bg:#0b192d; --bg-soft:#11233d; --card:#ffffff; --muted:#6b7280; --brand:#2563eb; --accent:#14b8a6;
       --text:#0f172a; --link:#1d4ed8; --ring: rgba(37,99,235,.25);
     }
     html{scroll-behavior:smooth}
-    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:#ffffff}
+    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:#f7fafc}
     .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{background:#ffffff; color:var(--text); position:sticky; top:0; z-index:50; box-shadow:0 2px 14px rgba(0,0,0,.05)}
+    header{background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%); color:#e5ecf8; position:sticky; top:0; z-index:50; box-shadow:0 2px 14px rgba(0,0,0,.15)}
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{font-weight:800; letter-spacing:.5px}
-    .nav a{color:#374151; text-decoration:none; margin-left:18px; font-weight:600}
-    .nav a:hover{color:var(--brand)}
-    .hero{background:#ffffff; color:var(--text); padding:56px 0 32px}
+    .nav a{color:#cfe0ff; text-decoration:none; margin-left:18px; font-weight:600}
+    .nav a:hover{color:#fff}
+    .hero{background:linear-gradient(180deg, var(--bg-soft) 0%, #0e223f 100%); color:#e9f1ff; padding:56px 0 32px}
     .hero-grid{display:grid; grid-template-columns: 200px 1fr; gap:32px; align-items:center}
-    .avatar{width:200px; height:200px; border-radius:50%; object-fit:cover; border:6px solid rgba(0,0,0,.05); box-shadow:0 8px 24px rgba(0,0,0,.05)}
+    .avatar{width:200px; height:200px; border-radius:50%; object-fit:cover; border:6px solid rgba(255,255,255,.2); box-shadow:0 8px 24px rgba(0,0,0,.25)}
     .tags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 18px}
-    .tag{background:#eef2ff; color:#1e3a8a; border:1px solid #c7d2fe; padding:6px 10px; border-radius:999px; font-size:.85rem; font-weight:600}
+    .tag{background:rgba(20,184,166,.15); color:#b8fff3; border:1px solid rgba(20,184,166,.35); padding:6px 10px; border-radius:999px; font-size:.85rem; font-weight:600}
     .cta{display:flex; gap:12px; flex-wrap:wrap}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none}
     .btn-primary{background:var(--brand); color:#fff; box-shadow:0 8px 22px var(--ring)}
-    .btn-ghost{background:transparent; border:1.5px solid #d1d5db; color:#374151}
+    .btn-ghost{background:transparent; border:1.5px solid rgba(255,255,255,.35); color:#e6f0ff}
     .btn:hover{transform:translateY(-1px)}
     section{padding:56px 0}
     h2{font-size:1.6rem; margin:0 0 18px}
@@ -41,7 +41,7 @@
     .list li{padding:12px 10px; border-left:4px solid #e8eef9; background:#fbfdff; border-radius:12px; margin:10px 0; box-shadow:0 1px 0 rgba(2,6,23,0.04)}
     .pill{display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#334155; font-size:.78rem; font-weight:700}
     .kvs{display:flex; flex-wrap:wrap; gap:10px}
-    .kv{background:#f9fafb; padding:10px 12px; border-radius:10px; border:1px solid #e5ecff}
+    .kv{background:#f2f6ff; padding:10px 12px; border-radius:10px; border:1px solid #e5ecff}
     footer{padding:36px 0; text-align:center; color:var(--muted)}
     @media (max-width:860px){ .hero-grid{grid-template-columns:1fr; text-align:center} .avatar{margin:0 auto} .two{grid-template-columns:1fr} }
   </style>
@@ -80,7 +80,7 @@
         </div>
         <div class="cta">
           <a class="btn btn-primary" href="assets/Miao_Lin_CV.pdf" target="_blank" rel="noopener">View CV ▸</a>
-          <!-- <a class="btn btn-ghost" href="#publications">Publications</a> -->
+          <a class="btn btn-ghost" href="#publications">Publications</a>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>Contact & Links</h2>
       <div class="card">
         <p><strong>Miao Lin</strong><br>
         Email: <a href="mailto:mlin020@odu.edu">mlin020@odu.edu</a><br>
