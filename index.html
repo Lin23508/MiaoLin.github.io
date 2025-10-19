@@ -10,170 +10,143 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b192d; --bg-soft:#11233d; --card:#ffffff; --muted:#6b7280; --brand:#2563eb; --accent:#14b8a6;
-      --text:#0f172a; --link:#1d4ed8; --ring: rgba(37,99,235,.25);
+      --nav:#0b192d; --nav-soft:#11233d; --card:#ffffff; --muted:#6b7280; --brand:#2563eb;
+      --text:#0f172a; --ink:#111827; --ring: rgba(37,99,235,.25);
     }
     html{scroll-behavior:smooth}
-    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:#f7fafc}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%); color:#e5ecf8; position:sticky; top:0; z-index:50; box-shadow:0 2px 14px rgba(0,0,0,.15)}
+    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:#f3f6fb}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+
+    /* Top bar */
+    header{background:linear-gradient(180deg, var(--nav) 0%, var(--nav-soft) 100%); color:#e5ecf8; position:sticky; top:0; z-index:50; box-shadow:0 2px 14px rgba(0,0,0,.15)}
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{font-weight:800; letter-spacing:.5px}
     .nav a{color:#cfe0ff; text-decoration:none; margin-left:18px; font-weight:600}
     .nav a:hover{color:#fff}
-    .hero{background:linear-gradient(180deg, var(--bg-soft) 0%, #0e223f 100%); color:#e9f1ff; padding:56px 0 32px}
-    .hero-grid{display:grid; grid-template-columns: 200px 1fr; gap:32px; align-items:center}
-    .avatar{width:200px; height:200px; border-radius:50%; object-fit:cover; border:6px solid rgba(255,255,255,.2); box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 18px}
-    .tag{background:rgba(20,184,166,.15); color:#b8fff3; border:1px solid rgba(20,184,166,.35); padding:6px 10px; border-radius:999px; font-size:.85rem; font-weight:600}
-    .cta{display:flex; gap:12px; flex-wrap:wrap}
+
+    /* Layout under the blue bar */
+    .main-wrap{background:#fff;}
+    .bio-grid{display:grid; grid-template-columns: 320px 1fr; gap:28px; padding:28px 0 0}
+    .sidebar{position:relative}
+    .card{background:var(--card); border-radius:16px; padding:18px; box-shadow:0 6px 16px rgba(15,23,42,.06); border:1px solid #eef2f7}
+    .avatar{width:260px; height:260px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 14px; border:6px solid #e6eefc}
+    .name{font-size:1.6rem; font-weight:800; text-align:center; color:#1d4ed8; margin:6px 0 6px}
+    .role{color:var(--muted); text-align:center}
+
+    .links{display:flex; flex-direction:column; gap:10px; margin-top:14px}
+    .pill{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 14px; border-radius:12px; background:transparent; border:1.5px solid rgba(17,24,39,0.15); color:var(--ink); font-weight:700}
+    .pill a{color:#2563eb; text-decoration:none}
+    .pill a:hover{color:#1e40af; text-decoration:underline}
+
+    /* Right column sections */
+    section{padding:28px 0}
+    h2{font-size:1.6rem; margin:0 0 14px}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none}
     .btn-primary{background:var(--brand); color:#fff; box-shadow:0 8px 22px var(--ring)}
-    .btn-ghost{background:transparent; border:1.5px solid rgba(255,255,255,.35); color:#e6f0ff}
-    .btn:hover{transform:translateY(-1px)}
-    section{padding:56px 0}
-    h2{font-size:1.6rem; margin:0 0 18px}
-    .grid{display:grid; gap:18px}
-    .two{grid-template-columns: 1fr 1fr}
-    .card{background:var(--card); border-radius:16px; padding:18px; box-shadow:0 6px 16px rgba(15,23,42,.06); border:1px solid #eef2f7}
-    .muted{color:var(--muted)}
+
     .list{list-style:none; padding:0; margin:0}
     .list li{padding:12px 10px; border-left:4px solid #e8eef9; background:#fbfdff; border-radius:12px; margin:10px 0; box-shadow:0 1px 0 rgba(2,6,23,0.04)}
-    .pill{display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#334155; font-size:.78rem; font-weight:700}
-    .kvs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.kv {
-  background: transparent;
-  color: #ffffff;
-  padding: 10px 16px;
-  border-radius: 12px;
-  border: 1.5px solid rgba(255,255,255,0.6);
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(255,255,255,0.1);
-}
-.kv a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-}
-.kv a:hover {
-  color: #60a5fa;
-}
+
     footer{padding:36px 0; text-align:center; color:var(--muted)}
-    @media (max-width:860px){ .hero-grid{grid-template-columns:1fr; text-align:center} .avatar{margin:0 auto} .two{grid-template-columns:1fr} }
+    @media (max-width:980px){ .bio-grid{grid-template-columns:1fr} .avatar{width:200px; height:200px} }
   </style>
 </head>
 <body>
+  <!-- Blue bar with name + nav (like the reference) -->
   <header>
     <div class="container nav">
       <div class="brand">Miao Lin</div>
       <nav>
+        <a href="#about">About Me</a>
         <a href="#education">Education</a>
         <a href="#teaching">Teaching</a>
         <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <img class="avatar" src="assets/photo.jpg" alt="Miao Lin portrait" />
-      <div>
-        <h1 style="margin:0 0 6px; font-size:2rem">Miao Lin</h1>
-        <div class="muted" style="font-weight:600">Ph.D. Student · Computer Science · Old Dominion University</div>
-        <div class="tags">
-          <span class="tag">Trustworthy AI</span>
-          <span class="tag">Adversarial Robustness</span>
-          <span class="tag">Backdoor & Data Poisoning</span>
-          <span class="tag">Edge/On-device ML</span>
+  <!-- White background content -->
+  <div class="main-wrap">
+    <div class="container bio-grid">
+      <!-- Left: photo, name, links -->
+      <aside class="sidebar">
+        <div class="card">
+          <img class="avatar" src="assets/photo.jpg" alt="Miao Lin portrait" />
+          <div class="name">Miao Lin</div>
+          <div class="role">Ph.D. Student · Computer Science · Old Dominion University</div>
+          <div class="links">
+            <div class="pill">Google Scholar <a href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">View</a></div>
+            <div class="pill">GitHub <a href="https://github.com/Lin23508" target="_blank" rel="noopener">@Lin23508</a></div>
+            <div class="pill">LinkedIn <a href="https://www.linkedin.com/in/miao-lin-a51899300/" target="_blank" rel="noopener">Profile</a></div>
+          </div>
         </div>
-        <p style="max-width:62ch; line-height:1.55">I work on securing AI models for edge devices by advancing defense mechanisms against adversarial and backdoor threats. My research secures AI for practical deployments such as voice assistants and facial recognition, combining theoretical guarantees with empirical systems work to improve robustness and efficiency in real-world settings. Recent work proposes a certified poisoned-sample detector under dataset imbalance and an efficient randomized smoothing framework for robustness certification on resource-constrained devices.</p>
-        <div class="kvs">
-          <div class="kv"><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">View</a></div>
-          <div class="kv"><strong>GitHub:</strong> <a href="https://github.com/Lin23508" target="_blank" rel="noopener">@Lin23508</a></div>
-          <div class="kv"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/miao-lin-a51899300/" target="_blank" rel="noopener">Profile</a></div>
-        </div>
-        <div class="cta">
-          <a class="btn btn-primary" href="assets/Miao_Lin_CV.pdf" target="_blank" rel="noopener">View CV ▸</a>
-          <a class="btn btn-ghost" href="#publications">Publications</a>
-        </div>
-      </div>
+      </aside>
+
+      <!-- Right: sections -->
+      <main>
+        <section id="about">
+          <h2>About Me</h2>
+          <div class="card">
+            <p style="margin:0">My research focuses on securing artificial intelligence (AI) models deployed on edge devices by developing defense mechanisms against emerging adversarial and data-poisoning (backdoor) threats. I integrate rigorous theoretical guarantees with empirical systems research to enhance robustness, efficiency, and reliability in real-world environments.</p>
+            <div style="margin-top:14px">
+              <a class="btn btn-primary" href="assets/Miao_Lin_CV.pdf" target="_blank" rel="noopener">View CV ▸</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <div class="card">
+            <ul class="list">
+              <li><strong>Old Dominion University</strong> — Ph.D., Computer Science <span class="muted">(08/2023 – Present)</span></li>
+              <li><strong>Central South University</strong> — Master of Medicine <span class="muted">(08/2020 – 06/2023)</span></li>
+              <li><strong>Hunan University of Medicine</strong> — Bachelor of Science <span class="muted">(08/2016 – 06/2020)</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="teaching">
+          <h2>Teaching & Outreach</h2>
+          <div class="card">
+            <ul class="list">
+              <li><strong>NSF Regional I‑Corps</strong> — Co‑Entrepreneur Lead <span class="muted">(05/2025 – 10/2025)</span> — 40+ customer‑discovery interviews on privacy‑tech; refined problem–solution fit and GTM.</li>
+              <li><strong>CYSE635 (AI Security & Privacy)</strong> — Guest Lecturer <span class="muted">(09/2025 – 10/2025)</span> — Taught core cyber‑defense concepts; SEED Labs hands‑on sessions with real‑world malware and exploits.</li>
+              <li><strong>CYSE635/CS695</strong> — Curriculum Co‑designer <span class="muted">(07/2024 – 05/2025)</span> — Integrated LLM threats; labs and assessments aligned with industry certifications.</li>
+              <li><strong>NSF T3‑CIDERS</strong> — Curriculum Developer <span class="muted">(05/2024 – 08/2024)</span> — Cybersecurity workshops for high‑school teachers.</li>
+              <li><strong>CS 467/567</strong> — Teaching Assistant <span class="muted">(07/2023 – 12/2024)</span> — Reverse engineering, API hooking, DLL/process injection, network analysis; mentored AI‑assisted malware‑analysis capstone.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2>Publications</h2>
+          <div class="card">
+            <ol class="list" style="counter-reset:item">
+              <li>Lin, M., Yu, F., Ning, R., Li, L., Lou, Q., Zheng, M., Xin, C., Wu, H. <strong>RPP: a certified poisoned‑sample detection framework for backdoor attacks under dataset imbalance.</strong> <em>Under review in ICLR 2026.</em></li>
+              <li>Lin, M., Zhang, J., Li, J., Yu, F., Li, L., Xin, C., Wu, H., Ning, R. <strong>ACS‑Boot: efficient randomized smoothing for robustness certification on resource‑constrained edge devices.</strong> <em>Under review in IEEE INFOCOM 2026.</em></li>
+              <li>Chen, Z., Li, J., Lin, M., Mao, A., Li, L., Ning, R., Xin, C., Wu, H. <strong>TrojanEdge: mutual information–enhanced robust and persistent backdoor attacks for edge and on‑device deployments.</strong> <em>Under review in IEEE INFOCOM 2026.</em></li>
+              <li>Lin, M., Xie, W., Xiong, D., <em>et al.</em> <strong>Cyasterone ameliorates sepsis‑related acute lung injury via AKT(Ser473)/GSK3β(Ser9)/Nrf2 pathway.</strong> <em>Chinese Medicine</em>, 2023, 18:136.</li>
+              <li>Lin, M., Xiong, D., Lang, D., <em>et al.</em> <strong>SLCO4A1‑mediated transmembrane transport of lysionotin attenuates acute lung injury by activating the AMPK/Nrf2 signaling pathway.</strong> <em>Phytotherapy Research</em>, in press. doi:10.1002/ptr.70024.</li>
+              <li>Deng, L., Xie, W., Lin, M., <em>et al.</em> <strong>Taraxerone inhibits M1 polarization and alleviates sepsis‑induced acute lung injury by activating SIRT1.</strong> <em>Chinese Medicine</em>, 2024, 19:159.</li>
+              <li>Xie, W., Deng, L., Lin, M., <em>et al.</em> <strong>Sirtuin 1 mediates the protective effects of echinacoside against sepsis‑induced acute lung injury by regulating the NOX4–Nrf2 axis.</strong> <em>Antioxidants</em>, 2023, 12(11):1925.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <div class="card">
+            <p style="margin:0"><strong>Miao Lin</strong><br>
+              Email: <a href="mailto:mlin020@odu.edu">mlin020@odu.edu</a><br>
+              Ph.D., Department of Computer Science<br>
+              Old Dominion University, Norfolk, VA, USA
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
-  </section>
-
-  <main class="container">
-    <section id="education">
-      <h2>Education</h2>
-      <div class="grid">
-        <div class="card"><strong>Old Dominion University</strong> — Ph.D., Computer Science <span class="muted">(08/2023 – Present)</span></div>
-        <div class="card"><strong>Central South University</strong> — Master of Medicine <span class="muted">(08/2020 – 06/2023)</span></div>
-        <div class="card"><strong>Hunan University of Medicine</strong> — Bachelor of Science <span class="muted">(08/2016 – 06/2020)</span></div>
-      </div>
-    </section>
-
-    <section id="teaching">
-      <h2>Teaching & Outreach</h2>
-      <ul class="list">
-        <li><span class="pill">NSF Regional I-Corps</span> Co-Entrepreneur Lead <span class="muted">(05/2025 – 10/2025)</span> — Conducted 40+ customer-discovery interviews on privacy-tech needs; refined problem–solution fit and GTM for a cybersecurity startup concept.</li>
-        <li><span class="pill">CYSE635 (AI Security & Privacy)</span> Guest Lecturer <span class="muted">(09/2025 – 10/2025)</span> — Taught core concepts of cybersecurity defense, including common software vulnerabilities, attack vectors, and mitigation best practices. Conducted hands-on lab sessions using SEED Labs, working with real-world malware and exploits to reinforce defensive techniques.</li>
-        <li><span class="pill">CYSE635/CS695</span> Curriculum Co-designer <span class="muted">(07/2024 – 05/2025)</span> — Integrated threats against LLMs; built hands-on labs and assessment aligned with industry certifications.</li>
-        <li><span class="pill">NSF T3-CIDERS</span> Curriculum Developer <span class="muted">(05/2024 – 08/2024)</span> — Developed cybersecurity workshops for high-school teachers.</li>
-        <li><span class="pill">CS 467/567</span> Teaching Assistant <span class="muted">(07/2023 – 12/2024)</span> — Led labs on reverse engineering (x86/64), API hooking, DLL/process injection, network analysis; mentored an AI-assisted malware-analysis capstone.</li>
-      </ul>
-    </section>
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <ol class="list" style="counter-reset:item">
-        <li>
-          Lin, M., Yu, F., Ning, R., Li, L., Lou, Q., Zheng, M., Xin, C., Wu, H. <strong>RPP: a certified poisoned-sample detection framework for backdoor attacks under dataset imbalance.</strong> <em>Under review in ICLR 2026.</em>
-        </li>
-        <li>
-          Lin, M., Zhang, J., Li, J., Yu, F., Li, L., Xin, C., Wu, H., Ning, R. <strong>ACS-Boot: efficient randomized smoothing for robustness certification on resource-constrained edge devices.</strong> <em>Under review in IEEE INFOCOM 2026.</em>
-        </li>
-        <li>
-          Chen, Z., Li, J., Lin, M., Mao, A., Li, L., Ning, R., Xin, C., Wu, H. <strong>TrojanEdge: mutual information–enhanced robust and persistent backdoor attacks for edge and on-device deployments.</strong> <em>Under review in IEEE INFOCOM 2026.</em>
-        </li>
-        <li>
-          Lin, M., Xie, W., Xiong, D., <em>et al.</em> <strong>Cyasterone ameliorates sepsis-related acute lung injury via AKT(Ser473)/GSK3β(Ser9)/Nrf2 pathway.</strong> <em>Chinese Medicine</em>, 2023, 18:136.
-        </li>
-        <li>
-          Lin, M., Xiong, D., Lang, D., <em>et al.</em> <strong>SLCO4A1-mediated transmembrane transport of lysionotin attenuates acute lung injury by activating the AMPK/Nrf2 signaling pathway.</strong> <em>Phytotherapy Research</em>, in press. doi:10.1002/ptr.70024.
-        </li>
-        <li>
-          Deng, L., Xie, W., Lin, M., <em>et al.</em> <strong>Taraxerone inhibits M1 polarization and alleviates sepsis-induced acute lung injury by activating SIRT1.</strong> <em>Chinese Medicine</em>, 2024, 19:159.
-        </li>
-        <li>
-          Xie, W., Deng, L., Lin, M., <em>et al.</em> <strong>Sirtuin 1 mediates the protective effects of echinacoside against sepsis-induced acute lung injury by regulating the NOX4–Nrf2 axis.</strong> <em>Antioxidants</em>, 2023, 12(11):1925.
-        </li>
-      </ol>
-    </section>
-
-    <section id="awards">
-      <h2>Awards & Honors</h2>
-      <ul class="list">
-        <li><strong>Dominion Scholar</strong>, Old Dominion University <span class="muted">(2024–2025)</span></li>
-        <li><strong>Provincial Excellent Undergraduate</strong> <span class="muted">(2020)</span></li>
-        <li><strong>Second Prize Scholarship</strong>, CSU <span class="muted">(2020, 2021, 2022)</span></li>
-        <li><strong>National Scholarship</strong>, CSU <span class="muted">(2019)</span></li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p><strong>Miao Lin</strong><br>
-        Email: <a href="mailto:mlin020@odu.edu">mlin020@odu.edu</a><br>
-        Ph.D., Department of Computer Science<br>
-        Old Dominion University, Norfolk, VA, USA</p>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <footer>
     <div class="container">© <span id="y"></span> Miao Lin — Last updated automatically.</div>
