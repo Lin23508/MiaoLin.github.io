@@ -34,7 +34,6 @@
     .name{font-size:1.6rem; font-weight:800; text-align:center; color:#1d4ed8; margin:6px 0 6px}
     .role{color:var(--muted); text-align:center}
 
-    /* New icon links */
     .links {
       display: flex;
       flex-direction: column;
@@ -64,60 +63,50 @@
       color: #1e40af;
     }
 
-    /* Right column */
     section{padding:28px 0}
     h2{font-size:1.6rem; margin:0 0 14px}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none}
     .btn-primary{background:var(--brand); color:#fff; box-shadow:0 8px 22px var(--ring)}
-
     .list{list-style:none; padding:0; margin:0}
     .list li{padding:12px 10px; border-left:4px solid #e8eef9; background:#fbfdff; border-radius:12px; margin:10px 0; box-shadow:0 1px 0 rgba(2,6,23,0.04)}
-
     footer{padding:36px 0; text-align:center; color:var(--muted)}
     @media (max-width:980px){ .bio-grid{grid-template-columns:1fr} .avatar{width:200px; height:200px} }
   </style>
 </head>
 <body>
-  <!-- Top Blue Navigation Bar -->
+  <!-- Top Navigation -->
   <header>
     <div class="container nav">
       <div class="brand">Miao Lin</div>
       <nav>
-        <a href="#about">About Me</a>
+        <a href="#about">About</a>
         <a href="#education">Education</a>
+        <a href="#academic">Academic</a>
+        <a href="#teaching">Teaching</a>
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- White Background Content -->
   <div class="main-wrap">
     <div class="container bio-grid">
-      <!-- Left Sidebar -->
+      <!-- Sidebar -->
       <aside>
         <div class="card">
           <img class="avatar" src="assets/photo.jpg" alt="Miao Lin portrait" />
           <div class="name">Miao Lin</div>
           <div class="role">Ph.D. Student · Computer Science · Old Dominion University</div>
           <div class="links">
-            <a href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1" target="_blank" class="link-item">
-              <i class="fa-solid fa-graduation-cap"></i> Google Scholar
-            </a>
-            <a href="https://github.com/Lin23508" target="_blank" class="link-item">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/miao-lin-a51899300/" target="_blank" class="link-item">
-              <i class="fa-brands fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="mailto:mlin020@odu.edu" class="link-item">
-              <i class="fa-solid fa-envelope"></i> Email
-            </a>
+            <a href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1" target="_blank" class="link-item"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://github.com/Lin23508" target="_blank" class="link-item"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/miao-lin-a51899300/" target="_blank" class="link-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:mlin020@odu.edu" class="link-item"><i class="fa-solid fa-envelope"></i> Email</a>
           </div>
         </div>
       </aside>
 
-      <!-- Right Content -->
+      <!-- Main Content -->
       <main>
         <section id="about">
           <h2>About Me</h2>
@@ -140,11 +129,11 @@
           </div>
         </section>
 
-        <!-- Academic Service & Leadership -->
         <section id="academic">
+          <h2>Academic Service & Leadership</h2>
           <div class="card">
             <ul class="list">
-              <li><strong>ICNC 2026 Reviewer</strong> — Reviewed technical papers in network and cybersecurity domains.</li>
+              <li><strong>ICNC 2026</strong> — Reviewer — Reviewed technical papers in network and cybersecurity domains.</li>
               <li><strong>NSF Regional I-Corps</strong> — Entrepreneur Lead <span class="muted">(05/2025 – 10/2025)</span> — 40+ customer-discovery interviews on privacy-tech; refined problem–solution fit and GTM.</li>
               <li><strong>CYSE635/CS695</strong> — Curriculum Co-designer <span class="muted">(07/2024 – 05/2025)</span> — Integrated LLM threats; labs and assessments aligned with industry certifications.</li>
               <li><strong>NSF T3-CIDERS</strong> — Curriculum Developer <span class="muted">(05/2024 – 08/2024)</span> — Cybersecurity workshops for high-school teachers.</li>
@@ -152,8 +141,8 @@
           </div>
         </section>
 
-        <!-- Teaching Experience -->
         <section id="teaching">
+          <h2>Teaching Experience</h2>
           <div class="card">
             <ul class="list">
               <li><strong>CS 467/567 (Introduction to Reverse Software Engineering)</strong> — Teaching Assistant <span class="muted">(07/2023 – 12/2024)</span> — Reverse engineering, API hooking, DLL/process injection, network analysis; mentored AI-assisted malware-analysis capstone.</li>
@@ -165,47 +154,25 @@
         <section id="publications">
           <h2>Publications</h2>
           <div class="card">
-            <ol class="list" style="counter-reset:item">
+            <ol class="list">
               <li><strong>Lin, M.</strong>, Yu, F., Ning, R., Li, L., Lou, Q., Zheng, M., Xin, C., Wu, H. 
-    RPP: a certified poisoned-sample detection framework for backdoor attacks under dataset imbalance. 
-                <em>Under review in ICLR 2026.</em>
-              </li>
-
+              RPP: a certified poisoned-sample detection framework for backdoor attacks under dataset imbalance. 
+              <em>Under review in ICLR 2026.</em></li>
               <li><strong>Lin, M.</strong>, Zhang, J., Li, J., Yu, F., Li, L., Xin, C., Wu, H., Ning, R. 
-    ACS-Boot: efficient randomized smoothing for robustness certification on resource-constrained edge devices. 
-                <em>Under review in IEEE INFOCOM 2026.</em>
-              </li>
-
+              ACS-Boot: efficient randomized smoothing for robustness certification on resource-constrained edge devices. 
+              <em>Under review in IEEE INFOCOM 2026.</em></li>
               <li>Chen, Z., Li, J., <strong>Lin, M.</strong>, Mao, A., Li, L., Ning, R., Xin, C., Wu, H. 
-    TrojanEdge: mutual information–enhanced robust and persistent backdoor attacks for edge and on-device deployments. 
-                <em>Under review in IEEE INFOCOM 2026.</em>
-              </li>
-
+              TrojanEdge: mutual information–enhanced robust and persistent backdoor attacks for edge and on-device deployments. 
+              <em>Under review in IEEE INFOCOM 2026.</em></li>
               <li><strong>Lin, M.</strong>, Xiong, D., Lang, D., <em>et al.</em> 
-    SLCO4A1-mediated transmembrane transport of lysionotin attenuates acute lung injury by activating the AMPK/Nrf2 signaling pathway. 
-                <em>Phytotherapy Research</em>, 2025, 39(10): 4404–4427.
-              </li>
-
-              <li>Deng, L., Xie, W., <strong>Lin, M.</strong>, <em>et al.</em> 
-    Taraxerone inhibits M1 polarization and alleviates sepsis-induced acute lung injury by activating SIRT1. 
-                <em>Chinese Medicine</em>, 2024, 19:159.
-              </li>
-
-              <li>Xie, W., Deng, L., <strong>Lin, M.</strong>, <em>et al.</em> 
-    Sirtuin 1 mediates the protective effects of echinacoside against sepsis-induced acute lung injury by regulating the NOX4–Nrf2 axis. 
-                <em>Antioxidants</em>, 2023, 12(11):1925.
-              </li>
-
-              <li><strong>Lin, M.</strong>, Xie, W., Xiong, D., <em>et al.</em> 
-    Cyasterone ameliorates sepsis-related acute lung injury via AKT(Ser473)/GSK3β(Ser9)/Nrf2 pathway. 
-                <em>Chinese Medicine</em>, 2023, 18:136.
-              </li>
+              SLCO4A1-mediated transmembrane transport of lysionotin attenuates acute lung injury by activating the AMPK/Nrf2 signaling pathway. 
+              <em>Phytotherapy Research</em>, 2025.</li>
             </ol>
           </div>
         </section>
 
-        <!-- <!-- Awards & Honors -->
         <section id="awards">
+          <h2>Awards & Honors</h2>
           <div class="card">
             <ul class="list">
               <li><strong>Dominion Scholar</strong>, ODU, 2024</li>
@@ -214,7 +181,7 @@
               <li><strong>National Scholarship</strong>, Central South University</li>
             </ul>
           </div>
-        </section> -->
+        </section>
 
         <section id="contact">
           <h2>Contact</h2>
@@ -232,7 +199,6 @@
   <footer>
     <div class="container">© <span id="y"></span> Miao Lin — Last updated automatically.</div>
   </footer>
-
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
