@@ -1,403 +1,1524 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Miao Lin | Academic Portfolio</title>
-  <meta name="description" content="Miao Lin — Ph.D. Candidate in Computer Science at Old Dominion University. Trustworthy AI & Adversarial Robustness." />
+
+  <meta
+    name="description"
+    content="Miao Lin — Ph.D. Candidate in Computer Science at Old Dominion University. Research in trustworthy and efficient AI, certified robustness, AI security, and reliable large language models."
+  />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
 
   <style>
+
+    /* =========================================================
+       Global variables
+       ========================================================= */
+
     :root{
-      --nav:#0b192d; --nav-soft:#11233d; --card:#ffffff; --muted:#6b7280; --brand:#2563eb;
-      --text:#0f172a; --ring: rgba(37,99,235,.25);
+      --nav:#0b192d;
+      --nav-soft:#11233d;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --brand:#2563eb;
+      --text:#0f172a;
+      --ring:rgba(37,99,235,.25);
     }
-    html{scroll-behavior:smooth}
-    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background:#f3f6fb}
-    .container{max-width:1200px; margin:0 auto; padding:0 20px}
 
-    /* Top bar */
-    header{background:linear-gradient(180deg, var(--nav) 0%, var(--nav-soft) 100%); color:#e5ecf8; position:sticky; top:0; z-index:50; box-shadow:0 2px 14px rgba(0,0,0,.15)}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{font-weight:800; letter-spacing:.5px}
-    .nav a{color:#cfe0ff; text-decoration:none; margin-left:18px; font-weight:600}
-    .nav a:hover{color:#fff}
 
-    /* Layout */
-    .main-wrap{background:#fff;}
-    /* Layout */
-.main-wrap{
-  background:#fff;
-}
+    /* =========================================================
+       Global
+       ========================================================= */
 
-.bio-grid{
-  display:grid;
-  grid-template-columns:320px minmax(0, 1fr);
-  gap:28px;
-  padding:28px 0 0;
-  align-items:start;
-}
-
-/* Keep the left profile card fixed while the right side scrolls */
-aside{
-  position:sticky;
-  top:92px;           /* 64px header + some spacing */
-  align-self:start;
-  height:fit-content;
-}
-
-main{
-  min-width:0;
-}
-    .card{background:var(--card); border-radius:16px; padding:18px; box-shadow:0 6px 16px rgba(15,23,42,.06); border:1px solid #eef2f7}
-    .avatar{width:260px; height:260px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 14px; border:6px solid #e6eefc}
-    .name{font-size:1.6rem; font-weight:800; text-align:center; color:#1d4ed8; margin:6px 0 6px}
-    .role{color:var(--muted); text-align:center}
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 18px;
+    html{
+      scroll-behavior:smooth;
     }
-    .link-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      color: #2563eb;
-      background: transparent;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
+
+    body{
+      margin:0;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color:var(--text);
+      background:#f3f6fb;
     }
-    .link-item i {
-      font-size: 1.1rem;
-      width: 20px;
-      text-align: center;
-      color: #2563eb;
+
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
     }
-    .link-item:hover {
-      background: rgba(37, 99, 235, 0.1);
-      color: #1e40af;
+
+
+    /* Prevent sticky header from covering section headings */
+    section{
+      padding:28px 0;
+      scroll-margin-top:80px;
     }
+
+
+    /* =========================================================
+       Top navigation
+       ========================================================= */
+
+    header{
+      background:
+        linear-gradient(
+          180deg,
+          var(--nav) 0%,
+          var(--nav-soft) 100%
+        );
+
+      color:#e5ecf8;
+
+      position:sticky;
+      top:0;
+      z-index:50;
+
+      box-shadow:0 2px 14px rgba(0,0,0,.15);
+    }
+
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      min-height:64px;
+      gap:20px;
+    }
+
+
+    .brand{
+      font-weight:800;
+      letter-spacing:.5px;
+      white-space:nowrap;
+    }
+
+
+    .nav nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+
+
+    .nav a{
+      color:#cfe0ff;
+      text-decoration:none;
+
+      margin-left:14px;
+
+      font-size:.92rem;
+      font-weight:600;
+
+      white-space:nowrap;
+
+      transition:color .2s;
+    }
+
+
+    .nav a:hover{
+      color:#ffffff;
+    }
+
+
+    /* =========================================================
+       Main two-column layout
+       ========================================================= */
+
+    .main-wrap{
+      background:#ffffff;
+    }
+
+
+    .bio-grid{
+      display:grid;
+
+      grid-template-columns:
+        320px
+        minmax(0,1fr);
+
+      gap:28px;
+
+      padding:28px 0 0;
+
+      align-items:start;
+    }
+
+
+    /* =========================================================
+       Sticky left sidebar
+       ========================================================= */
+
+    aside{
+      position:sticky;
+
+      /*
+        64px top header
+        + approximately 28px spacing
+      */
+      top:92px;
+
+      align-self:start;
+      height:fit-content;
+    }
+
+
+    main{
+      min-width:0;
+    }
+
+
+    /* =========================================================
+       General card
+       ========================================================= */
+
+    .card{
+      background:var(--card);
+
+      border-radius:16px;
+
+      padding:18px;
+
+      box-shadow:
+        0 6px 16px rgba(15,23,42,.06);
+
+      border:1px solid #eef2f7;
+    }
+
+
+    /*
+      Only the LEFT profile card gets stretched.
+      Right-side cards are unaffected.
+    */
+
+    .profile-card{
+      min-height:calc(100vh - 120px);
+
+      box-sizing:border-box;
+
+      display:flex;
+      flex-direction:column;
+    }
+
+
+    /* =========================================================
+       Profile photo
+       ========================================================= */
+
+    .avatar{
+      width:260px;
+      height:260px;
+
+      border-radius:50%;
+
+      object-fit:cover;
+
+      display:block;
+
+      margin:0 auto 14px;
+
+      border:6px solid #e6eefc;
+    }
+
+
+    .name{
+      font-size:1.6rem;
+      font-weight:800;
+
+      text-align:center;
+
+      color:#1d4ed8;
+
+      margin:6px 0 6px;
+    }
+
+
+    .role{
+      color:var(--muted);
+      text-align:center;
+
+      line-height:1.35;
+    }
+
+
+    /* =========================================================
+       External links:
+       Google Scholar / GitHub / LinkedIn / Email
+       ========================================================= */
+
+    .links{
+      display:flex;
+      flex-direction:column;
+
+      gap:10px;
+
+      margin-top:18px;
+    }
+
+
+    .link-item{
+      display:flex;
+      align-items:center;
+
+      gap:10px;
+
+      font-weight:600;
+      text-decoration:none;
+
+      color:#2563eb;
+
+      background:transparent;
+
+      padding:8px 12px;
+
+      border-radius:8px;
+
+      transition:
+        background .2s,
+        color .2s,
+        transform .2s;
+    }
+
+
+    .link-item i{
+      font-size:1.1rem;
+
+      width:20px;
+
+      text-align:center;
+
+      color:#2563eb;
+    }
+
+
+    .link-item:hover{
+      background:rgba(37,99,235,.10);
+
+      color:#1e40af;
+
+      transform:translateX(2px);
+    }
+
+
+    /* =========================================================
+       Sidebar internal navigation
+       ========================================================= */
 
     .sidebar-nav{
-  margin-top:22px;
-  padding-top:18px;
-  border-top:1px solid #e5e7eb;
+      /*
+        Keep these links immediately BELOW
+        Google Scholar / GitHub / LinkedIn / Email.
+      */
 
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
+      margin-top:20px;
 
-.sidebar-nav a{
-  display:block;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
-  padding:9px 12px;
-  border-radius:8px;
+      padding-top:18px;
 
-  transition:
-    background .2s,
-    color .2s,
-    transform .2s;
-}
+      border-top:1px solid #e5e7eb;
 
-.sidebar-nav a:hover{
-  background:rgba(37,99,235,.08);
-  color:var(--brand);
-  transform:translateX(2px);
-}
+      display:flex;
+      flex-direction:column;
 
-    section{padding:28px 0}
-    h2{font-size:1.6rem; margin:0 0 14px}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none}
-    .btn-primary{background:var(--brand); color:#fff; box-shadow:0 8px 22px var(--ring)}
-    .list{list-style:none; padding:0; margin:0}
-    .list li{padding:12px 10px; border-left:4px solid #e8eef9; background:#fbfdff; border-radius:12px; margin:10px 0; box-shadow:0 1px 0 rgba(2,6,23,0.04)}
-    footer{padding:36px 0; text-align:center; color:var(--muted)}
+      gap:4px;
+    }
+
+
+    .sidebar-nav a{
+      display:block;
+
+      text-decoration:none;
+
+      /* Same blue family as Google Scholar links */
+      color:#2563eb;
+
+      font-weight:600;
+
+      padding:8px 12px;
+
+      border-radius:8px;
+
+      transition:
+        background .2s,
+        color .2s,
+        transform .2s;
+    }
+
+
+    .sidebar-nav a:hover{
+      background:rgba(37,99,235,.10);
+
+      color:#1e40af;
+
+      transform:translateX(2px);
+    }
+
+
+    /* =========================================================
+       Main content typography
+       ========================================================= */
+
+    h2{
+      font-size:1.6rem;
+
+      margin:0 0 14px;
+    }
+
+
+    h3{
+      margin-top:2px;
+    }
+
+
+    p{
+      line-height:1.55;
+    }
+
+
+    .muted{
+      color:var(--muted);
+    }
+
+
+    /* =========================================================
+       Buttons
+       ========================================================= */
+
+    .btn{
+      display:inline-flex;
+
+      align-items:center;
+
+      gap:8px;
+
+      padding:10px 14px;
+
+      border-radius:12px;
+
+      font-weight:700;
+
+      text-decoration:none;
+    }
+
+
+    .btn-primary{
+      background:var(--brand);
+
+      color:#ffffff;
+
+      box-shadow:
+        0 8px 22px var(--ring);
+    }
+
+
+    .btn-primary:hover{
+      background:#1d4ed8;
+    }
+
+
+    /* =========================================================
+       Lists
+       ========================================================= */
+
+    .list{
+      list-style:none;
+
+      padding:0;
+
+      margin:0;
+    }
+
+
+    .list li{
+      padding:12px 10px;
+
+      border-left:4px solid #e8eef9;
+
+      background:#fbfdff;
+
+      border-radius:12px;
+
+      margin:10px 0;
+
+      box-shadow:
+        0 1px 0 rgba(2,6,23,.04);
+    }
+
+
+    /* =========================================================
+       Footer
+       ========================================================= */
+
+    footer{
+      padding:36px 0;
+
+      text-align:center;
+
+      color:var(--muted);
+    }
+
+
+    /* =========================================================
+       Responsive layout
+       ========================================================= */
+
     @media (max-width:980px){
-  .bio-grid{
-    grid-template-columns:1fr;
-  }
 
-  aside{
-    position:static;
-  }
+      .bio-grid{
+        grid-template-columns:1fr;
+      }
 
-  .avatar{
-    width:200px;
-    height:200px;
-  }
-}
+
+      aside{
+        position:static;
+      }
+
+
+      .profile-card{
+        min-height:auto;
+      }
+
+
+      .avatar{
+        width:200px;
+        height:200px;
+      }
+
+
+      .nav{
+        padding:10px 0;
+      }
+
+
+      .nav nav{
+        justify-content:flex-start;
+      }
+
+
+      .nav a{
+        margin:
+          5px
+          12px
+          5px
+          0;
+      }
+    }
+
+
+    @media (max-width:650px){
+
+      .container{
+        padding:0 14px;
+      }
+
+
+      .nav{
+        align-items:flex-start;
+        flex-direction:column;
+
+        gap:8px;
+
+        padding:12px 0;
+      }
+
+
+      .nav nav{
+        width:100%;
+      }
+
+
+      .avatar{
+        width:180px;
+        height:180px;
+      }
+    }
+
   </style>
 </head>
+
+
 <body>
-  <!-- Top Navigation -->
+
+
+  <!-- =======================================================
+       Top Navigation
+       ======================================================= -->
+
   <header>
+
     <div class="container nav">
-      <div class="brand">Miao Lin</div>
+
+      <div class="brand">
+        Miao Lin
+      </div>
+
       <nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#academic">Academic Service</a>
-  <a href="#publications">Publications</a>
-  <a href="#awards">Awards &amp; Honors</a>
-  <a href="#contact">Contact</a>
-</nav>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#research">
+          Research
+        </a>
+
+        <a href="#teaching">
+          Teaching
+        </a>
+
+        <a href="#academic">
+          Academic Service
+        </a>
+
+        <a href="#publications">
+          Publications
+        </a>
+
+        <a href="#awards">
+          Awards &amp; Honors
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
     </div>
+
   </header>
 
+
+  <!-- =======================================================
+       Main Content
+       ======================================================= -->
+
   <div class="main-wrap">
+
     <div class="container bio-grid">
-      <!-- Sidebar -->
+
+
+      <!-- =====================================================
+           LEFT SIDEBAR
+           ===================================================== -->
+
       <aside>
-        <div class="card">
-          <img class="avatar" src="assets/photo.jpg" alt="Miao Lin portrait" />
-          <div class="name">Miao Lin</div>
-          <div class="role">Ph.D. Candidate · Computer Science · Old Dominion University</div>
-          <div class="links">
-            <a href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1" target="_blank" class="link-item"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
-            <a href="https://github.com/Lin23508" target="_blank" class="link-item"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/miao-lin-a51899300/" target="_blank" class="link-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:mlin020@odu.edu" class="link-item"><i class="fa-solid fa-envelope"></i> Email</a>
+
+        <div class="card profile-card">
+
+
+          <!-- Profile Photo -->
+
+          <img
+            class="avatar"
+            src="assets/photo.jpg"
+            alt="Miao Lin portrait"
+          />
+
+
+          <!-- Name -->
+
+          <div class="name">
+            Miao Lin
           </div>
+
+
+          <!-- Position -->
+
+          <div class="role">
+            Ph.D. Candidate · Computer Science
+            <br>
+            Old Dominion University
+          </div>
+
+
+          <!-- External Links -->
+
+          <div class="links">
+
+            <a
+              href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1"
+              target="_blank"
+              rel="noopener"
+              class="link-item"
+            >
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+              Google Scholar
+
+            </a>
+
+
+            <a
+              href="https://github.com/Lin23508"
+              target="_blank"
+              rel="noopener"
+              class="link-item"
+            >
+
+              <i class="fa-brands fa-github"></i>
+
+              GitHub
+
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/in/miao-lin-a51899300/"
+              target="_blank"
+              rel="noopener"
+              class="link-item"
+            >
+
+              <i class="fa-brands fa-linkedin"></i>
+
+              LinkedIn
+
+            </a>
+
+
+            <a
+              href="mailto:mlin020@odu.edu"
+              class="link-item"
+            >
+
+              <i class="fa-solid fa-envelope"></i>
+
+              Email
+
+            </a>
+
+          </div>
+
+
+          <!-- Internal Website Navigation -->
 
           <div class="sidebar-nav">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#academic">Academic</a>
-      <a href="#publications">Publications</a>
-      <a href="#awards">Awards &amp; Honors</a>
-      <a href="#contact">Contact</a>
-    </div>
+
+            <a href="#about">
+              About
+            </a>
+
+            <a href="#research">
+              Research
+            </a>
+
+            <a href="#teaching">
+              Teaching
+            </a>
+
+            <a href="#academic">
+              Academic Service
+            </a>
+
+            <a href="#publications">
+              Publications
+            </a>
+
+            <a href="#awards">
+              Awards &amp; Honors
+            </a>
+
+            <a href="#contact">
+              Contact
+            </a>
+
+          </div>
+
         </div>
+
       </aside>
 
-      <!-- Main Content -->
+
+      <!-- =====================================================
+           RIGHT MAIN CONTENT
+           ===================================================== -->
+
       <main>
+
+
+        <!-- ===================================================
+             ABOUT
+             =================================================== -->
+
         <section id="about">
-          <h2>About Me</h2>
+
+          <h2>
+            About Me
+          </h2>
+
           <div class="card">
-            <p>I am a Ph.D. candidate in the Department of Computer Science at Old Dominion University (ODU). My research interests focus on trustworthy and efficient AI, including certified robustness, AI security, and reliable large language models. I received my M.S. degree from Central South University, China.</p>
+
+            <p>
+              I am a Ph.D. candidate in the Department of Computer Science
+              at Old Dominion University (ODU). My research interests focus
+              on trustworthy and efficient AI, including certified robustness,
+              AI security, and reliable large language models. I received my
+              M.S. degree from Central South University, China.
+            </p>
+
             <div style="margin-top:14px">
-              <a class="btn btn-primary" href="assets/Miao_Lin_CV.pdf" target="_blank" rel="noopener">View CV ▸</a>
+
+              <a
+                class="btn btn-primary"
+                href="assets/Miao_Lin_CV.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+
+                View CV ▸
+
+              </a>
+
             </div>
+
           </div>
+
         </section>
 
-        <!-- <section id="education">
-          <h2>Education</h2>
-          <div class="card">
-            <ul class="list">
-              <li><strong>Old Dominion University</strong> — Ph.D., Computer Science <span class="muted">(08/2023 – Present)</span></li>
-              <li><strong>Old Dominion University</strong> — M.S., Computer Science <span class="muted">(08/2023 – 12/2025)</span></li>
-              <li><strong>Central South University</strong> — Master of Medicine <span class="muted">(08/2020 – 06/2023)</span></li>
-            </ul>
-          </div>
-        </section> -->
+
+        <!-- ===================================================
+             RESEARCH
+             =================================================== -->
 
         <section id="research">
-  <h2>Research Topics</h2>
-  <div class="card">
-    <ul class="list">
 
-      <li>
-        <strong>Efficient & Certified AI</strong> —
-        Developing computationally efficient certification methods for robust AI systems, 
-        with an emphasis on randomized smoothing, adaptive sampling, and resource-aware deployment.
-        <ul>
-          <li>
-            <em>Budget-Aware Efficient Certification for Randomized Smoothing on Edge Devices</em>
-            — Under review at AAAI 2027.
-          </li>
-          <li>
-            <em>Laplace-Bridged Randomized Smoothing for Fast Certified Robustness</em>
-            — arXiv, 2026.
-          </li>
-          <li>
-            <em>ACS-Boot: Efficient Randomized Smoothing on Edge Devices</em>
-            — IEEE INFOCOM, 2026.
-          </li>
-        </ul>
-      </li>
+          <h2>
+            Research Topics
+          </h2>
 
-      <li>
-        <strong>AI Security: Backdoor & Data Poisoning Defense</strong> —
-        Investigating backdoor and data-poisoning threats and developing theoretically grounded 
-        defenses for secure and reliable AI systems.
-        <ul>
-          <li>
-            <em>RPP: A Certified Poisoned-Sample Detection Framework for Backdoor Attacks under Dataset Imbalance</em>
-            — TMLR, 2026.
-          </li>
-          <li>
-            <em>TrojanEdge: Mutual Information–Enhanced Robust and Persistent Backdoor Attacks for Edge and On-Device Deployments</em>
-            — IEEE INFOCOM, 2026.
-          </li>
-        </ul>
-      </li>
+          <div class="card">
 
-      <li>
-        <strong>Reliable LLMs & Hallucination Detection</strong> —
-        Improving LLM reliability through adaptive cross-model verification and efficient 
-        detection of self-consistent hallucinations.
-        <ul>
-          <li>
-            <em>Instance-Adaptive Cross-Model Verification for Detecting Self-Consistent Hallucinations</em>
-            — Under review at AAAI 2027.
-          </li>
-        </ul>
-      </li>
+            <ul class="list">
 
-    </ul>
-  </div>
-</section>
+
+              <!-- Research Topic 1 -->
+
+              <li>
+
+                <strong>
+                  Efficient &amp; Certified AI
+                </strong>
+
+                —
+                Developing computationally efficient certification methods
+                for robust AI systems, with an emphasis on randomized
+                smoothing, adaptive sampling, and resource-aware deployment.
+
+
+                <ul>
+
+                  <li>
+
+                    <em>
+                      Budget-Aware Efficient Certification for Randomized
+                      Smoothing on Edge Devices
+                    </em>
+
+                    — Under review at AAAI 2027.
+
+                  </li>
+
+
+                  <li>
+
+                    <em>
+                      Laplace-Bridged Randomized Smoothing for Fast
+                      Certified Robustness
+                    </em>
+
+                    — arXiv, 2026.
+
+                  </li>
+
+
+                  <li>
+
+                    <em>
+                      ACS-Boot: Efficient Randomized Smoothing on Edge Devices
+                    </em>
+
+                    — IEEE INFOCOM, 2026.
+
+                  </li>
+
+                </ul>
+
+              </li>
+
+
+              <!-- Research Topic 2 -->
+
+              <li>
+
+                <strong>
+                  AI Security: Backdoor &amp; Data Poisoning Defense
+                </strong>
+
+                —
+                Investigating backdoor and data-poisoning threats and
+                developing theoretically grounded defenses for secure
+                and reliable AI systems.
+
+
+                <ul>
+
+                  <li>
+
+                    <em>
+                      RPP: A Certified Poisoned-Sample Detection Framework
+                      for Backdoor Attacks under Dataset Imbalance
+                    </em>
+
+                    — TMLR, 2026.
+
+                  </li>
+
+
+                  <li>
+
+                    <em>
+                      TrojanEdge: Mutual Information–Enhanced Robust and
+                      Persistent Backdoor Attacks for Edge and On-Device
+                      Deployments
+                    </em>
+
+                    — IEEE INFOCOM, 2026.
+
+                  </li>
+
+                </ul>
+
+              </li>
+
+
+              <!-- Research Topic 3 -->
+
+              <li>
+
+                <strong>
+                  Reliable LLMs &amp; Hallucination Detection
+                </strong>
+
+                —
+                Improving LLM reliability through adaptive cross-model
+                verification and efficient detection of self-consistent
+                hallucinations.
+
+
+                <ul>
+
+                  <li>
+
+                    <em>
+                      Instance-Adaptive Cross-Model Verification for
+                      Detecting Self-Consistent Hallucinations
+                    </em>
+
+                    — Under review at AAAI 2027.
+
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===================================================
+             TEACHING
+             =================================================== -->
 
         <section id="teaching">
-  <h2>Teaching Experience</h2>
-  <div class="card">
-    <ul class="list">
-      <li><strong>Teaching Assistant</strong> — CS 390 (Introduction to Theoretical Computer Science) <span class="muted">(08/2026 – Present)</span> — Supported instruction and grading; assisted students with computability, complexity, and algorithmic foundations.</li>
 
-      <li><strong>Teaching Assistant</strong> — School of Cybersecurity, ODU <span class="muted">(01/2026 – 12/2026)</span> — Designed CTF-style challenges for CyberCup.AI, focusing on LLM CTF, LLM backdoors, and AI-assisted security.</li>
+          <h2>
+            Teaching Experience
+          </h2>
 
-      <li><strong>Guest Lecturer</strong> — CYSE615 (Mobile and Wireless Security) <span class="muted">(04/2026 – 05/2026)</span> — Presented backdoor attacks in CNNs and LLMs, emphasizing security risks in mobile, wireless, and edge-computing environments.</li>
+          <div class="card">
 
-      <li><strong>Guest Lecturer</strong> — CYSE635 (AI Security & Privacy) <span class="muted">(09/2025 – 10/2025)</span> — Taught core cyber-defense concepts; led SEED Labs sessions with real-world malware and exploits.</li>
+            <ul class="list">
 
-      <li><strong>Teaching Assistant</strong> — CS 467/567 (Introduction to Reverse Software Engineering) <span class="muted">(07/2023 – 12/2024)</span> — Supported reverse engineering, API hooking, DLL/process injection, and network analysis; mentored an AI-assisted malware-analysis capstone.</li>
-    </ul>
-  </div>
-</section>
+
+              <li>
+
+                <strong>
+                  Teaching Assistant
+                </strong>
+
+                — CS 390
+                (Introduction to Theoretical Computer Science)
+
+                <span class="muted">
+                  (08/2026 – Present)
+                </span>
+
+                —
+                Supported instruction and grading; assisted students with
+                computability, complexity, and algorithmic foundations.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Teaching Assistant
+                </strong>
+
+                — School of Cybersecurity, ODU
+
+                <span class="muted">
+                  (01/2026 – 12/2026)
+                </span>
+
+                —
+                Designed CTF-style challenges for CyberCup.AI, focusing
+                on LLM CTF, LLM backdoors, and AI-assisted security.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Guest Lecturer
+                </strong>
+
+                — CYSE615
+                (Mobile and Wireless Security)
+
+                <span class="muted">
+                  (04/2026 – 05/2026)
+                </span>
+
+                —
+                Presented backdoor attacks in CNNs and LLMs,
+                emphasizing security risks in mobile, wireless,
+                and edge-computing environments.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Guest Lecturer
+                </strong>
+
+                — CYSE635
+                (AI Security &amp; Privacy)
+
+                <span class="muted">
+                  (09/2025 – 10/2025)
+                </span>
+
+                —
+                Taught core cyber-defense concepts; led SEED Labs
+                sessions with real-world malware and exploits.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Teaching Assistant
+                </strong>
+
+                — CS 467/567
+                (Introduction to Reverse Software Engineering)
+
+                <span class="muted">
+                  (07/2023 – 12/2024)
+                </span>
+
+                —
+                Supported reverse engineering, API hooking,
+                DLL/process injection, and network analysis;
+                mentored an AI-assisted malware-analysis capstone.
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===================================================
+             ACADEMIC SERVICE
+             =================================================== -->
 
         <section id="academic">
-          <h2>Academic Service</h2>
+
+          <h2>
+            Academic Service
+          </h2>
+
           <div class="card">
+
             <ul class="list">
-              <li><strong>Reviewer</strong> — ICNC, Journal of Information Security and Applications.</li>
-              <li><strong>Entrepreneur Lead</strong> — NSF Regional I-Corps <span class="muted">(05/2025 – 10/2025)</span> — 40+ customer-discovery interviews on privacy-tech; refined problem–solution fit and GTM.</li>
-              <li><strong>Curriculum Co-designer</strong> — CYSE635/CS695 <span class="muted">(07/2024 – 05/2025)</span> — Integrated LLM threats; labs and assessments aligned with industry certifications.</li>
+
+
+              <li>
+
+                <strong>
+                  Reviewer
+                </strong>
+
+                —
+                ICNC,
+                Journal of Information Security and Applications.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Entrepreneur Lead
+                </strong>
+
+                —
+                NSF Regional I-Corps
+
+                <span class="muted">
+                  (05/2025 – 10/2025)
+                </span>
+
+                —
+                40+ customer-discovery interviews on privacy-tech;
+                refined problem–solution fit and GTM.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Curriculum Co-designer
+                </strong>
+
+                —
+                CYSE635/CS695
+
+                <span class="muted">
+                  (07/2024 – 05/2025)
+                </span>
+
+                —
+                Integrated LLM threats; labs and assessments aligned
+                with industry certifications.
+
+              </li>
+
             </ul>
+
           </div>
+
         </section>
+
+
+        <!-- ===================================================
+             PUBLICATIONS
+             =================================================== -->
 
         <section id="publications">
-  <h2>Publications</h2>
 
-  <div class="card">
-    <h3>Computer Science & AI Research</h3>
-    <ol class="list">
+          <h2>
+            Publications
+          </h2>
 
-      <li>
-        <strong>Lin, M.</strong>, Wang, Z., Li, J., Yu, F., Li, L., Ning, R.
-        Instance-Adaptive Cross-Model Verification for Detecting Self-Consistent Hallucinations.
-        <em>Under review at AAAI 2027.</em>
-      </li>
 
-      <li>
-        <strong>Lin, M.</strong>, Yu, F., Ning, R.
-        Budget-Aware Efficient Certification for Randomized Smoothing on Edge Devices.
-        <em>Under review at AAAI 2027.</em>
-      </li>
+          <!-- Computer Science -->
 
-      <li>
-        <strong>Lin, M.</strong>, Mazumder, M. D., Yu, F., Li, L., Takabi, D., Ning, R.
-        Laplace-Bridged Randomized Smoothing for Fast Certified Robustness.
-        <em>arXiv preprint arXiv:2604.24993, 2026.</em>
-      </li>
+          <div class="card">
 
-      <li>
-        <strong>Lin, M.</strong>, Yu, F., Ning, R., Li, L., Lou, Q., Zheng, M., Xin, C., Wu, H.
-        RPP: a certified poisoned-sample detection framework for backdoor attacks under dataset imbalance.
-        <em>Transactions on Machine Learning Research (TMLR), 2026.</em>
-      </li>
+            <h3>
+              Computer Science &amp; AI Research
+            </h3>
 
-      <li>
-        <strong>Lin, M.</strong>, Zhang, J., Li, J., Yu, F., Li, L., Xin, C., Wu, H., Ning, R.
-        ACS-Boot: efficient randomized smoothing for robustness certification on resource-constrained edge devices.
-        <em>In IEEE International Conference on Computer Communications (INFOCOM), 2026.</em>
-      </li>
+            <ol class="list">
 
-      <li>
-        Chen, Z., Li, J., <strong>Lin, M.</strong>, Mao, A., Li, L., Ning, R., Xin, C., Wu, H.
-        TrojanEdge: mutual information–enhanced robust and persistent backdoor attacks for edge and on-device deployments.
-        <em>In IEEE International Conference on Computer Communications (INFOCOM), 2026.</em>
-      </li>
 
-    </ol>
-  </div>
+              <li>
 
-  <div class="card">
-    <h3>Previous Biomedical Research</h3>
-    <ol class="list">
+                <strong>
+                  Lin, M.
+                </strong>,
+                Wang, Z., Li, J., Yu, F., Li, L., Ning, R.
 
-      <li>
-        Xiong, D.<sup>*</sup>, <strong>Lin, M.</strong><sup>*</sup>, Lang, D., <em>et al.</em>
-        SLCO4A1-mediated transmembrane transport of lysionotin attenuates acute lung injury by activating the AMPK/Nrf2 signaling pathway.
-        <em>Phytotherapy Research</em>, 2025.
-      </li>
+                Instance-Adaptive Cross-Model Verification for
+                Detecting Self-Consistent Hallucinations.
 
-      <li>
-        Deng, L., Xie, W., <strong>Lin, M.</strong>, <em>et al.</em>
-        Taraxerone inhibits M1 polarization and alleviates sepsis-induced acute lung injury by activating SIRT1.
-        <em>Chinese Medicine</em>, 2024, 19:159.
-      </li>
+                <em>
+                  Under review at AAAI 2027.
+                </em>
 
-      <li>
-        Xie, W., Deng, L., <strong>Lin, M.</strong>, <em>et al.</em>
-        Sirtuin 1 mediates the protective effects of echinacoside against sepsis-induced acute lung injury by regulating the NOX4–Nrf2 axis.
-        <em>Antioxidants</em>, 2023, 12(11):1925.
-      </li>
+              </li>
 
-      <li>
-        <strong>Lin, M.</strong>, Xie, W., Xiong, D., <em>et al.</em>
-        Cyasterone ameliorates sepsis-related acute lung injury via AKT(Ser473)/GSK3β(Ser9)/Nrf2 pathway.
-        <em>Chinese Medicine</em>, 2023, 18:136.
-      </li>
 
-    </ol>
-  </div>
-</section>
+              <li>
+
+                <strong>
+                  Lin, M.
+                </strong>,
+                Yu, F., Ning, R.
+
+                Budget-Aware Efficient Certification for
+                Randomized Smoothing on Edge Devices.
+
+                <em>
+                  Under review at AAAI 2027.
+                </em>
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Lin, M.
+                </strong>,
+                Mazumder, M. D., Yu, F., Li, L.,
+                Takabi, D., Ning, R.
+
+                Laplace-Bridged Randomized Smoothing
+                for Fast Certified Robustness.
+
+                <em>
+                  arXiv preprint arXiv:2604.24993, 2026.
+                </em>
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Lin, M.
+                </strong>,
+                Yu, F., Ning, R., Li, L., Lou, Q.,
+                Zheng, M., Xin, C., Wu, H.
+
+                RPP: a certified poisoned-sample detection framework
+                for backdoor attacks under dataset imbalance.
+
+                <em>
+                  Transactions on Machine Learning Research
+                  (TMLR), 2026.
+                </em>
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Lin, M.
+                </strong>,
+                Zhang, J., Li, J., Yu, F., Li, L.,
+                Xin, C., Wu, H., Ning, R.
+
+                ACS-Boot: efficient randomized smoothing for
+                robustness certification on resource-constrained
+                edge devices.
+
+                <em>
+                  In IEEE International Conference on Computer
+                  Communications (INFOCOM), 2026.
+                </em>
+
+              </li>
+
+
+              <li>
+
+                Chen, Z., Li, J.,
+
+                <strong>
+                  Lin, M.
+                </strong>,
+
+                Mao, A., Li, L., Ning, R.,
+                Xin, C., Wu, H.
+
+                TrojanEdge: mutual information–enhanced robust
+                and persistent backdoor attacks for edge and
+                on-device deployments.
+
+                <em>
+                  In IEEE International Conference on Computer
+                  Communications (INFOCOM), 2026.
+                </em>
+
+              </li>
+
+            </ol>
+
+          </div>
+
+
+          <!-- Previous Biomedical Research -->
+
+          <div
+            class="card"
+            style="margin-top:20px"
+          >
+
+            <h3>
+              Previous Biomedical Research
+            </h3>
+
+            <ol class="list">
+
+
+              <li>
+
+                Xiong, D.<sup>*</sup>,
+
+                <strong>
+                  Lin, M.
+                </strong><sup>*</sup>,
+
+                Lang, D., <em>et al.</em>
+
+                SLCO4A1-mediated transmembrane transport of lysionotin
+                attenuates acute lung injury by activating the
+                AMPK/Nrf2 signaling pathway.
+
+                <em>
+                  Phytotherapy Research
+                </em>,
+
+                2025.
+
+              </li>
+
+
+              <li>
+
+                Deng, L., Xie, W.,
+
+                <strong>
+                  Lin, M.
+                </strong>,
+
+                <em>et al.</em>
+
+                Taraxerone inhibits M1 polarization and alleviates
+                sepsis-induced acute lung injury by activating SIRT1.
+
+                <em>
+                  Chinese Medicine
+                </em>,
+
+                2024, 19:159.
+
+              </li>
+
+
+              <li>
+
+                Xie, W., Deng, L.,
+
+                <strong>
+                  Lin, M.
+                </strong>,
+
+                <em>et al.</em>
+
+                Sirtuin 1 mediates the protective effects of
+                echinacoside against sepsis-induced acute lung injury
+                by regulating the NOX4–Nrf2 axis.
+
+                <em>
+                  Antioxidants
+                </em>,
+
+                2023, 12(11):1925.
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Lin, M.
+                </strong>,
+
+                Xie, W., Xiong, D.,
+
+                <em>et al.</em>
+
+                Cyasterone ameliorates sepsis-related acute lung injury
+                via AKT(Ser473)/GSK3β(Ser9)/Nrf2 pathway.
+
+                <em>
+                  Chinese Medicine
+                </em>,
+
+                2023, 18:136.
+
+              </li>
+
+            </ol>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===================================================
+             AWARDS
+             =================================================== -->
 
         <section id="awards">
-          <h2>Awards & Honors</h2>
+
+          <h2>
+            Awards &amp; Honors
+          </h2>
+
           <div class="card">
+
             <ul class="list">
-              <li><strong>Student Travel Awards</strong>, IEEE INFOCOM, 2026</li>
-              <li><strong>Dominion Scholar</strong>, ODU, 2024</li>
-              <!-- <li><strong>Provincial Excellent Undergraduate</strong></li> -->
-              <!-- <li><strong>Second Prize Scholarship</strong>, CSU</li> -->
-              <!-- <li><strong>National Scholarship</strong>, CSU</li> -->
+
+              <li>
+
+                <strong>
+                  Student Travel Award
+                </strong>,
+
+                IEEE INFOCOM, 2026
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Dominion Scholar
+                </strong>,
+
+                Old Dominion University, 2024
+
+              </li>
+
             </ul>
+
           </div>
+
         </section>
+
+
+        <!-- ===================================================
+             CONTACT
+             =================================================== -->
 
         <section id="contact">
-          <h2>Contact</h2>
+
+          <h2>
+            Contact
+          </h2>
+
           <div class="card">
-            <p><strong>Miao Lin</strong><br>
-            Email: <a href="mailto:mlin020@odu.edu">mlin020@odu.edu</a><br>
-            Ph.D. Candidate, Department of Computer Science<br>
-            Old Dominion University, Norfolk, VA, USA</p>
+
+            <p>
+
+              <strong>
+                Miao Lin
+              </strong>
+
+              <br>
+
+              Email:
+              <a href="mailto:mlin020@odu.edu">
+                mlin020@odu.edu
+              </a>
+
+              <br>
+
+              Ph.D. Candidate,
+              Department of Computer Science
+
+              <br>
+
+              Old Dominion University,
+              Norfolk, VA, USA
+
+            </p>
+
           </div>
+
         </section>
+
+
       </main>
+
     </div>
+
   </div>
 
+
+  <!-- =======================================================
+       Footer
+       ======================================================= -->
+
   <footer>
-    <div class="container">© <span id="y"></span> Miao Lin — Last updated automatically.</div>
+
+    <div class="container">
+
+      ©
+      <span id="y"></span>
+      Miao Lin — Last updated automatically.
+
+    </div>
+
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+
+  <script>
+
+    document.getElementById('y').textContent =
+      new Date().getFullYear();
+
+  </script>
+
+
 </body>
+
 </html>
