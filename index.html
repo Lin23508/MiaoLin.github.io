@@ -28,10 +28,6 @@
 
   <style>
 
-    /* =========================================================
-       Global variables
-       ========================================================= */
-
     :root{
       --nav:#0b192d;
       --nav-soft:#11233d;
@@ -43,16 +39,14 @@
     }
 
 
-    /* =========================================================
-       Global
-       ========================================================= */
-
     html{
       scroll-behavior:smooth;
     }
 
+
     body{
       margin:0;
+
       font-family:
         Inter,
         system-ui,
@@ -64,25 +58,29 @@
         sans-serif;
 
       color:var(--text);
+
       background:#f3f6fb;
     }
 
+
     .container{
       max-width:1200px;
+
       margin:0 auto;
+
       padding:0 20px;
     }
 
 
-    /* Prevent sticky header from covering section headings */
     section{
       padding:28px 0;
-      scroll-margin-top:80px;
+
+      scroll-margin-top:82px;
     }
 
 
     /* =========================================================
-       Top navigation
+       Top Navigation
        ========================================================= */
 
     header{
@@ -96,45 +94,58 @@
       color:#e5ecf8;
 
       position:sticky;
+
       top:0;
+
       z-index:50;
 
-      box-shadow:0 2px 14px rgba(0,0,0,.15);
+      box-shadow:
+        0 2px 14px rgba(0,0,0,.15);
     }
 
 
     .nav{
+      min-height:64px;
+
       display:flex;
+
       align-items:center;
+
       justify-content:space-between;
 
-      min-height:64px;
       gap:20px;
     }
 
 
     .brand{
       font-weight:800;
+
       letter-spacing:.5px;
+
       white-space:nowrap;
     }
 
 
     .nav nav{
       display:flex;
+
       align-items:center;
+
       justify-content:flex-end;
+
       flex-wrap:wrap;
     }
 
 
     .nav a{
       color:#cfe0ff;
+
       text-decoration:none;
 
       margin-left:14px;
 
       font-size:.92rem;
+
       font-weight:600;
 
       white-space:nowrap;
@@ -149,7 +160,7 @@
 
 
     /* =========================================================
-       Main two-column layout
+       Main Layout
        ========================================================= */
 
     .main-wrap{
@@ -172,20 +183,13 @@
     }
 
 
-    /* =========================================================
-       Sticky left sidebar
-       ========================================================= */
-
     aside{
       position:sticky;
 
-      /*
-        64px top header
-        + approximately 28px spacing
-      */
       top:92px;
 
       align-self:start;
+
       height:fit-content;
     }
 
@@ -196,7 +200,7 @@
 
 
     /* =========================================================
-       General card
+       Cards
        ========================================================= */
 
     .card{
@@ -213,27 +217,25 @@
     }
 
 
-    /*
-      Only the LEFT profile card gets stretched.
-      Right-side cards are unaffected.
-    */
-
+    /* Left profile card only */
     .profile-card{
       min-height:calc(100vh - 120px);
 
       box-sizing:border-box;
 
       display:flex;
+
       flex-direction:column;
     }
 
 
     /* =========================================================
-       Profile photo
+       Profile
        ========================================================= */
 
     .avatar{
       width:260px;
+
       height:260px;
 
       border-radius:50%;
@@ -250,6 +252,7 @@
 
     .name{
       font-size:1.6rem;
+
       font-weight:800;
 
       text-align:center;
@@ -262,6 +265,7 @@
 
     .role{
       color:var(--muted);
+
       text-align:center;
 
       line-height:1.35;
@@ -269,27 +273,113 @@
 
 
     /* =========================================================
-       External links:
+       Internal Sidebar Navigation
+       About / Research / Teaching / ...
+       ========================================================= */
+
+    .sidebar-nav{
+      margin-top:26px;
+
+      padding-top:20px;
+
+      border-top:1px solid #e5e7eb;
+
+      display:flex;
+
+      flex-direction:column;
+
+      gap:4px;
+    }
+
+
+    .sidebar-nav a{
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      text-decoration:none;
+
+      color:var(--text);
+
+      font-weight:600;
+
+      padding:10px 12px;
+
+      border-radius:8px;
+
+      border-left:3px solid transparent;
+
+      transition:
+        background .2s,
+        color .2s,
+        border-color .2s,
+        transform .2s;
+    }
+
+
+    .sidebar-nav a:hover{
+      background:rgba(37,99,235,.07);
+
+      color:#2563eb;
+
+      border-left-color:#2563eb;
+
+      transform:translateX(2px);
+    }
+
+
+    .nav-arrow{
+      font-size:1.15rem;
+
+      color:#94a3b8;
+
+      transition:
+        color .2s,
+        transform .2s;
+    }
+
+
+    .sidebar-nav a:hover .nav-arrow{
+      color:#2563eb;
+
+      transform:translateX(2px);
+    }
+
+
+    /* =========================================================
+       External Links
        Google Scholar / GitHub / LinkedIn / Email
        ========================================================= */
 
     .links{
       display:flex;
+
       flex-direction:column;
 
-      gap:10px;
+      gap:8px;
+    }
 
-      margin-top:18px;
+
+    .external-links{
+      margin-top:22px;
+
+      padding-top:18px;
+
+      border-top:1px solid #e5e7eb;
     }
 
 
     .link-item{
       display:flex;
+
       align-items:center;
 
       gap:10px;
 
       font-weight:600;
+
       text-decoration:none;
 
       color:#2563eb;
@@ -328,60 +418,7 @@
 
 
     /* =========================================================
-       Sidebar internal navigation
-       ========================================================= */
-
-    .sidebar-nav{
-      /*
-        Keep these links immediately BELOW
-        Google Scholar / GitHub / LinkedIn / Email.
-      */
-
-      margin-top:20px;
-
-      padding-top:18px;
-
-      border-top:1px solid #e5e7eb;
-
-      display:flex;
-      flex-direction:column;
-
-      gap:4px;
-    }
-
-
-    .sidebar-nav a{
-      display:block;
-
-      text-decoration:none;
-
-      /* Same blue family as Google Scholar links */
-      color:#2563eb;
-
-      font-weight:600;
-
-      padding:8px 12px;
-
-      border-radius:8px;
-
-      transition:
-        background .2s,
-        color .2s,
-        transform .2s;
-    }
-
-
-    .sidebar-nav a:hover{
-      background:rgba(37,99,235,.10);
-
-      color:#1e40af;
-
-      transform:translateX(2px);
-    }
-
-
-    /* =========================================================
-       Main content typography
+       Main Content
        ========================================================= */
 
     h2{
@@ -485,7 +522,7 @@
 
 
     /* =========================================================
-       Responsive layout
+       Responsive
        ========================================================= */
 
     @media (max-width:980px){
@@ -507,6 +544,7 @@
 
       .avatar{
         width:200px;
+
         height:200px;
       }
 
@@ -540,6 +578,7 @@
 
       .nav{
         align-items:flex-start;
+
         flex-direction:column;
 
         gap:8px;
@@ -555,6 +594,7 @@
 
       .avatar{
         width:180px;
+
         height:180px;
       }
     }
@@ -577,6 +617,7 @@
       <div class="brand">
         Miao Lin
       </div>
+
 
       <nav>
 
@@ -616,7 +657,7 @@
 
 
   <!-- =======================================================
-       Main Content
+       Main Layout
        ======================================================= -->
 
   <div class="main-wrap">
@@ -649,7 +690,7 @@
           </div>
 
 
-          <!-- Position -->
+          <!-- Role -->
 
           <div class="role">
             Ph.D. Candidate · Computer Science
@@ -658,9 +699,107 @@
           </div>
 
 
+          <!-- Internal Navigation -->
+
+          <div class="sidebar-nav">
+
+            <a href="#about">
+
+              <span>
+                About
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+
+            <a href="#research">
+
+              <span>
+                Research
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+
+            <a href="#teaching">
+
+              <span>
+                Teaching
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+
+            <a href="#academic">
+
+              <span>
+                Academic Service
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+
+            <a href="#publications">
+
+              <span>
+                Publications
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+
+            <a href="#awards">
+
+              <span>
+                Awards &amp; Honors
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+
+            <a href="#contact">
+
+              <span>
+                Contact
+              </span>
+
+              <span class="nav-arrow">
+                ›
+              </span>
+
+            </a>
+
+          </div>
+
+
           <!-- External Links -->
 
-          <div class="links">
+          <div class="links external-links">
+
 
             <a
               href="https://scholar.google.com/citations?user=izyXma0AAAAJ&hl=en&authuser=1"
@@ -718,40 +857,6 @@
           </div>
 
 
-          <!-- Internal Website Navigation -->
-
-          <div class="sidebar-nav">
-
-            <a href="#about">
-              About
-            </a>
-
-            <a href="#research">
-              Research
-            </a>
-
-            <a href="#teaching">
-              Teaching
-            </a>
-
-            <a href="#academic">
-              Academic Service
-            </a>
-
-            <a href="#publications">
-              Publications
-            </a>
-
-            <a href="#awards">
-              Awards &amp; Honors
-            </a>
-
-            <a href="#contact">
-              Contact
-            </a>
-
-          </div>
-
         </div>
 
       </aside>
@@ -774,15 +879,19 @@
             About Me
           </h2>
 
+
           <div class="card">
 
             <p>
+
               I am a Ph.D. candidate in the Department of Computer Science
               at Old Dominion University (ODU). My research interests focus
               on trustworthy and efficient AI, including certified robustness,
               AI security, and reliable large language models. I received my
               M.S. degree from Central South University, China.
+
             </p>
+
 
             <div style="margin-top:14px">
 
@@ -814,12 +923,11 @@
             Research Topics
           </h2>
 
+
           <div class="card">
 
             <ul class="list">
 
-
-              <!-- Research Topic 1 -->
 
               <li>
 
@@ -829,11 +937,12 @@
 
                 —
                 Developing computationally efficient certification methods
-                for robust AI systems, with an emphasis on randomized
-                smoothing, adaptive sampling, and resource-aware deployment.
+                for robust AI systems, with an emphasis on randomized smoothing,
+                adaptive sampling, and resource-aware deployment.
 
 
                 <ul>
+
 
                   <li>
 
@@ -869,12 +978,11 @@
 
                   </li>
 
+
                 </ul>
 
               </li>
 
-
-              <!-- Research Topic 2 -->
 
               <li>
 
@@ -889,6 +997,7 @@
 
 
                 <ul>
+
 
                   <li>
 
@@ -914,12 +1023,11 @@
 
                   </li>
 
+
                 </ul>
 
               </li>
 
-
-              <!-- Research Topic 3 -->
 
               <li>
 
@@ -935,6 +1043,7 @@
 
                 <ul>
 
+
                   <li>
 
                     <em>
@@ -946,9 +1055,11 @@
 
                   </li>
 
+
                 </ul>
 
               </li>
+
 
             </ul>
 
@@ -966,6 +1077,7 @@
           <h2>
             Teaching Experience
           </h2>
+
 
           <div class="card">
 
@@ -1072,6 +1184,7 @@
 
               </li>
 
+
             </ul>
 
           </div>
@@ -1088,6 +1201,7 @@
           <h2>
             Academic Service
           </h2>
+
 
           <div class="card">
 
@@ -1146,6 +1260,7 @@
 
               </li>
 
+
             </ul>
 
           </div>
@@ -1171,6 +1286,7 @@
             <h3>
               Computer Science &amp; AI Research
             </h3>
+
 
             <ol class="list">
 
@@ -1288,12 +1404,13 @@
 
               </li>
 
+
             </ol>
 
           </div>
 
 
-          <!-- Previous Biomedical Research -->
+          <!-- Biomedical Research -->
 
           <div
             class="card"
@@ -1303,6 +1420,7 @@
             <h3>
               Previous Biomedical Research
             </h3>
+
 
             <ol class="list">
 
@@ -1396,6 +1514,7 @@
 
               </li>
 
+
             </ol>
 
           </div>
@@ -1413,9 +1532,11 @@
             Awards &amp; Honors
           </h2>
 
+
           <div class="card">
 
             <ul class="list">
+
 
               <li>
 
@@ -1438,6 +1559,7 @@
 
               </li>
 
+
             </ul>
 
           </div>
@@ -1454,6 +1576,7 @@
           <h2>
             Contact
           </h2>
+
 
           <div class="card">
 
